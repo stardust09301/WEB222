@@ -1,0 +1,184 @@
+/*
+    style.css
+    Name: Jenna Moon
+    Student ID: 134957224
+    Date: 2023-11-11
+*/
+
+/* Global styles for the body */
+body { 
+    background-color: lightblue;
+    color: #3b3a3a;
+    font-family: Helvetica;
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  /* Styles for heading (h1) */
+  h1 { 
+	font: Helvetica;
+    font-weight: bold;
+	letter-spacing: 1px; 
+	margin-bottom: 0; 
+	color: #300575;
+	} 
+
+  /* Styles for heading (h2) */
+  h2 { 
+    font: italic Helvetica;
+    letter-spacing: 1px; 
+    margin-bottom: 0; 
+    color: rgb(3, 54, 54);
+    }  
+
+  /* Styles for heading (h3) */
+  h3 { 
+    margin: 0 0 50px 0;
+    color: rgb(3, 54, 54);
+    } 
+
+  /* Styles for heading (h4) */
+  h4 { 
+    margin: 20px 0 0 0;
+    color: rgb(3, 54, 54);
+     }   
+
+/* Styles for box with ID "box1" */
+#box1 {
+    background-color: #2eb3db; /*  */
+    color: #43436c;
+    width: 300px;
+    border: 5px solid rgb(69, 7, 103);
+    padding: 20px;
+    margin: 20px;
+    display: flex; /* Use flexbox for box1 layout */
+    flex-direction: column; /* Stack child elements vertically */
+    justify-content: center; /* Center content vertically */
+    height: 100%; /* Occupy full height */
+}
+
+/* Styles for box with ID "box2" */
+#box2 {
+    background-color: #049cfb; /* Sky Blue */
+    border: 10px ridge rgb(116, 116, 117) ;
+    color: rgb(167, 213, 109);
+    text-align: right;
+    font-weight: bold; 
+    padding: 30px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Styles for box with ID "box3" */
+#box3 {
+    width: 800px;
+    background-color: #5872dc;
+    color: #fafafc;
+    font-weight: bold; 
+    text-align: center;
+    border: 5px hidden rgb(58, 15, 82);
+    padding: 5px;
+    margin: 5px; 
+}
+
+/* Styles for box with ID "box4" */
+#box4 {
+    border: 1px solid #012736;
+    padding: 25px 50px 75px 100px; /* Set the padding shorthand */
+    background-color: rgb(86, 192, 126);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+/* Styles for box with ID "box5" */
+#box5 {
+    border: 1px solid rgb(58, 0, 0);
+    margin: 25px 50px 50px 75px; /* Set the margin shorthand */
+    background-color: rgb(6, 212, 161);
+}
+
+/* Styles for box with ID "box6" */
+#box6 {
+    border-bottom: 6px solid rgb(48, 31, 31); /* Set the border-bottom shorthand*/
+    margin: 25px 50px 75px 100px;
+    background-color: rgb(112, 214, 177);  
+}
+
+/* Styles for box with ID "box-longhand" */
+#box-longhand {
+    /* Longhand properties for padding */
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+
+    /* Longhand properties for border */
+    border-width: 2px;
+    border-style: solid;
+    border-color: #5a5959;
+
+    /* Longhand properties for margin */
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+    /* Other Styles */
+    border-radius: 5px; 
+    background-color: rgb(184, 202, 95);
+    color: #373773;
+    font-weight: bold; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Styles for element with ID "myDIV" */
+#myDIV {
+    width: 100%; /* Occupy the full width */
+    padding: 50px 0;
+    font-weight: bold; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(5, 166, 247);
+    margin-top: 20px; /* Add top margin of 20px */
+}
+
+/* Styles for image with ID "myImage" */
+#myImage {
+    display: none; /* Initially hide the image */
+    max-width: 100%; /* Image does not exceed its container's width */
+    height: auto; /* Maintain the aspect ratio of the image */
+}
+
+/* Styles for button with class "toggle-button" */
+.toggle-button {
+    margin-top: 20px;
+    padding: 10px;
+    cursor: pointer; /* Set cursor to pointer on hover */
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+    font-weight: bold; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Styles for button with class "toggle-button" on hover */
+.toggle-button:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+
+

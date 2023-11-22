@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 6 Example</title>
+</head>
+<body>
+    <h1>M2N: Willowdale, North York</h1>
+
+    <figure>
+    <picture>
+        <source srcset="images\North_york_downtown_sunset_(explored)_(30721144226).webp" type="image/webp">
+        <img src="images\North_york_downtown_sunset_(explored)_(30721144226).jpg" alt="North York Sunset">   
+    </picture>
+    <!--Copy from attributes-->
+    <figcaption>
+        Photo by <a href="https://www.flickr.com/photos/wyliepoon/41774547062">via Wikimedia Commons</a>
+    </figcaption>
+    </figure>   
+    <!--Table template example-->
+    <table>
+        <!--Better written : tr-table row, td-table data, th-table header-->
+        <tr>
+            <th>Data 1</th><th>Data 2</th>
+        </tr>
+        <tr>
+            <td>Data 1</td><td>Data 2</td>
+        </tr>
+        <tr>
+            <td>Data 1</td><td>Data 2</td>
+        </tr>
+        <!--not easily readable-->
+        <tr><td>Data 1</td><td>Data 2</td></tr>
+
+    </table><br><br>
+    <!--Actual Data-->
+    <table>
+        <caption>Cases by Age Group for FSA M2N</caption>
+        <!--Header at the top-->
+        <thead>
+            <tr>
+                <th>Age Group</th>
+                <th>Cases</th>
+            </tr>
+        </thead>
+
+        <!--All the rows in the table-->
+        <tbody>
+            <tr>
+                <td>Unknown</td>
+                <td rowspan="2">1</td>
+            </tr>
+            <tr>
+                <td>Under 19</td>
+                <!--2 rows were merged-->>
+            </tr>
+            <tr>
+                <td>20 to 29</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>30 to 39</td>
+                <td>37</td>
+            </tr>
+            <tr>
+                <td>40 to 49</td>
+                <td>38</td>
+            </tr>
+            <tr>
+                <td>50 to 59</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>60 to 69</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>70 to 79</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>80 to 89</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td>90 and older</td>
+                <td>10</td>
+            </tr>
+
+        </tbody>
+
+        <!--The bottom of the table-->
+        <tfoot>
+            <!--colspan acts like merging cells in the spreadsheet-->
+            <th colspan="2">
+                Source: <a href="https://open.toronto.ca/dataset/covid-19-cases-in-toronto">Toronto Public Health Open Data</a>
+            </th>
+        </tfoot>
+    </table>
+    
+    <!--External Script to a local file-->
+    <!--Put the script at the bottom of the page(recommended), then html will be parsed first before js-->
+    <!--Each script has access to global script-->
+    <script src="script.js"></script>
+
+    <script>
+        let greeting = "Hello WEB222";
+    </script>
+    <script>
+        // Inline script- JS is placed inside the html
+        console.log(greeting);
+    </script>
+
+    <!--External Script-->
+    <script src="script.js"></script>
+    <script>
+        greetings("Web222")
+    </script>
+
+    <!-- element to use for drawing the chart -->
+    <!-- three.js/chartjs.org-->
+    <canvas id="chart"></canvas>
+
+    <!-- include an external chart library, this should come first-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.js"></script>
+    
+    <!-- include a local script that uses chart.js-->
+    <script src="script.js"></script>    
+   
+</body>
+</html>

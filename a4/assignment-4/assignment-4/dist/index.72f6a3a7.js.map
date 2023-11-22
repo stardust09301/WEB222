@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;CAIC,GAED,OAAO,KAAK,GAAG,EAEd","sources":["src/js/songs.js"],"sourcesContent":["/**\n * songs.js\n *\n * The app's songs\n */\n\nwindow.songs = [\n  /* TODO */\n];\n"],"names":[],"version":3,"file":"index.72f6a3a7.js.map","sourceRoot":"/__parcel_source_root/"}

@@ -1,0 +1,21 @@
+/* Use separate properties for all aspects */
+.example1 {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000;
+
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+/* Use shorthand properties to do everything at once */
+.example2 {
+    border: 1px solid #000;
+    margin: 5px 10px 15px 20px;    
+}
+
+.hidden {
+    display: none
+}

@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;CAIC,GAED,OAAO,OAAO,GAAG,EAEhB","sources":["src/js/artists.js"],"sourcesContent":["/**\n * artists.js\n *\n * The app's list of Artists\n */\n\nwindow.artists = [\n  /* TODO */\n];\n"],"names":[],"version":3,"file":"index.b040860f.js.map","sourceRoot":"/__parcel_source_root/"}

@@ -1,0 +1,304 @@
+<!--
+    Assignment 6
+
+    requestNew.html
+    Name: Jenna Moon
+    Student ID: 134957224
+    Date: 2023-12-12
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Request a New Artist</title>
+    <!-- A link to an external stylesheet-->
+    <link rel="stylesheet" href="" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+    <!-- Styles for the document -->
+    <style>
+      body {
+        background-color: #a8dadc;
+        color: rgb(24, 24, 24);
+      }
+      hr {
+        color: rgb(100, 99, 99);
+        border-style: double;
+      }
+      /* Styles for form elements and layout */
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      textarea {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Artist Request Form</h1>
+      <hr />
+      <h2>Please fill out the form to request a new Artist</h2>
+
+      <form id="request-form" action="https://httpbin.org/post" method="post">
+        <!-- Artist Information Section -->
+        <h3>Artist's Name</h3>
+        <div class="rows">
+          <!-- Artist's Name Input -->
+          <div class="col form-group">
+            <label for="artistName"
+              ><span class="text-danger">*</span> Artist's Name</label
+            >
+            <input
+              class="form-control"
+              id="artistName"
+              name="artistName"
+              type="text"
+              tabindex="1"
+              required
+            />
+          </div>
+
+          <!-- Jazz Genre Selection -->
+          <div class="col form-group">
+            <label for="jazzGenre"
+              ><span class="text-danger">*</span>Select a Jazz Genre:</label
+            >
+            <input
+              class="form-control"
+              id="jazzGenre"
+              list="genres"
+              name="jazzGenre"
+              oninput="checkCustom()"
+              tabindex="2"
+              required
+            />
+
+            <!-- Jazz Genre Input; Dropdown -->
+            <datalist id="genres">
+              <option value="Work Songs"></option>
+              <option value="Gospel"></option>
+              <option value="The Blues"></option>
+              <option value="Ragtime"></option>
+              <option value="New Orleans"></option>
+              <option value="Chicago Jazz"></option>
+              <option value="The Swing Era"></option>
+              <option value="Bebop"></option>
+              <option value="Porgy and Bess"></option>
+              <option value="Cool Jazz"></option>
+              <option value="Hard Bop"></option>
+              <option value="Modal Jazz"></option>
+              <option value="Free Jazz"></option>
+              <option value="Brazilian Jazz"></option>
+            </datalist>
+          </div>
+
+          <!-- Custom Genre Input -->
+          <div class="col form-group">
+            <p id="customGenreMessage" style="display: none">
+              You don't see the genre on our list? Enter a custom jazz genre
+              above.
+            </p>
+            <label for="customGenre">Enter a Custom Jazz Genre:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="customGenre"
+              name="customGenre"
+              tabindex="3"
+            />
+          </div>
+          <hr />
+
+          <!-- Social Media Input -->
+          <div id="socialMedia">
+            <h3>Artist's Social Media</h3>
+            <div class="col form-group">
+              <label for="facebook">Facebook:</label>
+              <input
+                class="form-control"
+                id="facebook"
+                name="facebook"
+                type="url"
+                tabindex="4"
+              />
+            </div>
+
+            <div class="col form-group">
+              <label for="instagram">Instagram:</label>
+              <input
+                class="form-control"
+                id="instagram"
+                name="instagram"
+                type="url"
+                tabindex="5"
+              />
+            </div>
+
+            <div class="col form-group">
+              <label for="twitter">Twitter:</label>
+              <input
+                class="form-control"
+                id="twitter"
+                name="twitter"
+                type="url"
+                tabindex="6"
+              />
+            </div>
+
+            <!-- Song and Video URL Input -->
+            <div class="col form-group" data-url-container>
+              <label for="songVideoUrls"
+                ><span class="text-danger">*</span
+                ><strong>Example Songs and Videos URLs:</strong></label
+              >
+              <input
+                type="url"
+                class="form-control"
+                name="songVideoUrls"
+                tabindex="7"
+                required
+              />
+              <button
+                type="button"
+                id="addUrlButton"
+                onclick="addUrl()"
+                tabindex="8"
+              >
+                Add
+              </button>
+            </div>
+
+            <!-- Checkbox for explicit lyrics -->
+            <div class="col form-group">
+              <label for="explicitLyrics">Explicit Lyrics?</label>
+              <input
+                type="checkbox"
+                id="explicitLyrics"
+                name="explicitLyrics"
+                tabindex="9"
+              />
+            </div>
+            <br />
+            <hr />
+
+            <!-- Textarea for description -->
+            <div class="col form-group">
+              <label for="description"
+                ><span class="text-danger">*</span
+                ><strong>Reason for Adding This Artist:</strong></label
+              >
+              <textarea
+                id="description"
+                name="description"
+                rows="8"
+                tabindex="10"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Submit and Reset Buttons -->
+            <div class="col form-group">
+              <input
+                class="button"
+                type="submit"
+                name="submit"
+                value="Submit"
+                tabindex="11"
+              />
+              <input
+                class="button"
+                type="reset"
+                name="reset"
+                value="Reset"
+                tabindex="12"
+              />
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <script>
+        // Function to check if a custom genre is selected
+        function checkCustom() {
+          const jazzGenreInput = document.getElementById("jazzGenre");
+          const customGenreInput = document.getElementById("customGenre");
+          const customGenreMessage =
+            document.getElementById("customGenreMessage");
+
+          if (jazzGenreInput.value === "") {
+            // If none is selected, display the custom genre input and message
+            customGenreInput.style.display = "block";
+            customGenreMessage.style.display = "block";
+          } else {
+            // If a genre is selected
+            customGenreInput.style.display = "none";
+            customGenreMessage.style.display = "none";
+          }
+        }
+
+        // Function to add input for song/video URLs
+        function addUrl() {
+          // Find the container for new URL inputs
+          const urlContainer = document.querySelector("[data-url-container]");
+          // Create a new input element
+          const input = document.createElement("input");
+          // Set the class, type, and name attributes for the input
+          input.className = "form-control";
+          input.type = "url";
+          input.name = "songVideoUrl";
+          // Append the new input
+          urlContainer.appendChild(input);
+        }
+
+        // Event listener for the form submission
+        document
+          .querySelector("#request-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get form data and convert to JSON
+            let formData = {
+              artistName: document.querySelector("#artistName").value,
+            };
+
+            let jsonData = JSON.stringify(formData);
+
+            // Create a new XMLHttpRequest
+            let xhr = new XMLHttpRequest();
+            let url = "https://httpbin.org/post";
+
+            // Define event handlers
+            xhr.onload = function () {
+              var response = JSON.parse(this.responseText);
+              console.log("Server Response:", response);
+              // Handle the response as needed
+            };
+
+            xhr.onerror = function () {
+              console.error("Error making the request");
+              // Handle errors
+            };
+
+            // Open and send the request
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader(
+              "Content-Type",
+              "application/json;charset=UTF-8",
+            );
+            xhr.send(jsonData);
+          });
+      </script>
+    </div>
+  </body>
+</html>

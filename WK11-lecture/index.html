@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script></script>
+</head>
+<body>
+    <h1>Hello Forms!</h1>
+    <form id="gt-form" action="/" name="text_form" method="post">
+      <input type="password"/><br/><br/>
+      <input type="text" pattern="\.?[a-zA-z]{3}"/><br/><br/>
+      <input type="color"/><br/><br/>
+      <input type="number"/><br/><br/>
+      <input type="date"/><br/><br/>
+      <input type="email" required placeholder="name@whatever.com"/><br/><br/>
+      <input type="submit"/>
+    </form>
+    <h1>Hello Another Forms!</h1>
+    <form id="info=form" action="/" name="text_form" method="post">
+      <input id="first-name" name="fname" type="text">
+      <input id="number-list" name="number-list" type="text">
+      <input type="submit" value="submit"/>
+    </form>
+    
+    <script>
+      var infoForm = document.getElementById('info-form');
+      infoForm.onsubmit = function()
+      {
+        //firstName Validation
+       var firstName = document.getElementById('first-name').value;
+        if(firstName.length <= 2)
+        {
+          alert("First name must be more than 2 characters");
+        }
+       
+       return false;// gets to stay on this page
+      }
+
+    </script>
+
+    
+</body>
+</html>

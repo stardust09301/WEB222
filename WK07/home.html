@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>This is a Document!</title>
+    <meta charset="utf-8" />
+
+    <script>
+        //let title = window.document.title;
+    //console.log(title);
+     //2. with event listener script can go up after title
+      window.onload = (event) => 
+      {
+        document.addEventListener("mousemove", function (event) {
+          var x = event.clientX;
+          var y = event.clientY;
+
+          console.log(x + " " + y);
+//1. for you to use innerHTML, need to use script to bottom right before </body>
+          var menuDiv = document.getElementById("menu");
+          menuDiv.innerHTML = x + " " + y;
+
+          menuDiv.style = "background-color: red;"
+
+        });
+        
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Welcome!</h1>
+
+    <div id="menu">Menu Items</div>
+
+    <p>This is a paragraph with a <a href="index.html">link</a> in it.</p>
+    <ul>
+      <li>first item</li>
+      <li>second item</li>
+      <li>third item</li>
+    </ul>
+  </body>
+</html>

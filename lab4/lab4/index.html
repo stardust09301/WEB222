@@ -1,0 +1,168 @@
+<!--
+    index.html
+    Name: Jenna Moon
+    Student ID: 134957224
+    Date: 2023-11-11
+-->
+
+<!--Using HTML5 for my document -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model | Display property</title>
+    <!-- Link to your CSS file if you have one -->
+    <link rel="stylesheet" href="style.css"> 
+</head>
+    
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Understand and apply the CSS Box Model and 
+            display property.</h1>
+        <nav>
+            <ul>
+                <!-- Navigation links to different sections -->
+                <li><a href="#boxModel">Box Model Exploration</a></li>
+                <li><a href="#shorthand">Shorthand Properties</a></li>
+                <li><a href="#longhand">Longhand Properties</a></li>
+                <li><a href="#marginCollapse">Margin Collapse</a></li>
+                <li><a href="#display">Experiment With Display Property</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <!-- Box Model Exploration Section -->
+        <section id="boxModel">
+            <h1>1. Box Model Exploration</h1>
+            <!-- Your box model examples -->
+                <div id="box1" class="box1">
+                    <p>This is box 1 with border 5px, padding 20px, and margin 20px.</p>
+                </div>
+
+                <div id="box2" class="box2">
+                    <p>This is box 2 with left-aligned text, ridged border 10px, padding 30px, and margin 30px.</p>
+                </div>
+
+                <div id="box3" class="box3">
+                    <p>This is box 3 with centered text, hidden border, padding 5px, and margin 5px.</p>
+                </div>
+            <br>
+            <hr>
+        </section>
+    
+        <!-- Shorthand Properties Section -->
+        <section id="shorthand">
+            <h1>2. Shorthand Properties</h1>
+                <ul>
+                     <!-- List items for shorthand properties -->
+                <h2><li>The padding shorthand property</li></h2>
+                <div id="box4" class="box4">
+                    This div element has a top padding of 25px, a right padding of 50px, 
+                    a bottom padding of 75px, and a left padding of 100px.
+                </div>
+
+                <h2><li>The margin shorthand property</li></h2>
+                <div id="box5" class="box5">
+                    This div element has a top margin of 25px, a 
+                    right and left margin of 50px, and a bottom margin of 75px.
+                </div>
+
+                <h2><li>The border shorthand(bottom) Property</li></h2>
+                <div id="box6" class="box6">
+                    This property is a shorthand property for border-bottom-width, 
+                    border-bottom-style, and border-bottom-color.
+                </div>
+                </ul>
+            <hr>
+        </section>
+
+         <!-- Longhand Properties Section -->
+        <section id="longhand">
+            <h1>3. longhand Properties</h1>
+            <!-- Your longhand property example -->
+                <div id="box-longhand" class="box-longhand">
+                    This property is a longhand property.
+                </div>
+            <br>
+            <hr>
+        </section>
+
+        <!-- Margin Collapse Section -->
+        <section id="marginCollapse">
+            <h1>4. Margin Collapse</h1>
+            <!-- Explanation and example of margin collapse -->
+                <p>The h3 element has a bottom margin of 50px and the 
+                    h4 element has a top margin of 20px. The vertical margin between 
+                    h3 and h4 should have been 70px (50px + 20px). However, due to margin 
+                    collapse, the actual margin is 50px.</p>
+                <h3>Heading 3-This h3 element has a bottom margin of 50px.</h3>
+                <h4>Heading 4-This h4 element has a top margin of 20px.</h4>
+            <hr>
+        </section>
+
+         <!-- Display Property Section -->
+        <section id="display">
+            <h1>5. Experiment With Display Property</h1>
+                <ul> 
+                    <!-- List items for display property examples -->
+                    <!-- Toggle element visibility using JavaScript -->  
+                <h2><li>Toggle the element</li></h2>
+
+                    <p>Click the "Try it" button to toggle between hiding and showing the element:</p>
+
+                    <button onclick="myFunction()">Try it</button>
+
+                    <div id="myDIV">
+                        Toggle element's visibility using JavaScript or by altering the CSS file.
+                    </div>
+
+                    <!-- JavaScript code to toggle the visibility of an element with the ID "myDIV" -->
+                    <script>
+                        // Function to toggle the visibility of the element with the ID "myDIV"
+                        function myFunction() {
+                             // Get the element by its ID
+                            var x = document.getElementById("myDIV");
+                            
+                            // Check if the current display property is "none"
+                            if (x.style.display === "none") {
+                                // If the element is currently hidden, set its display property to "block" to show it
+                                x.style.display = "block";
+                            } else {
+                                 // If the element is currently visible, set its display property to "none" to hide it
+                                x.style.display = "none";
+                            }
+                        }
+                    </script>
+
+                <!-- Toggle image visibility using JavaScript -->
+                <h2><li>Toggle Image Visibility</li></h2><br>
+
+                    <img id="trillium" src="trillium.jpeg" width="350" height="263" alt="Trillium">
+
+                    <div class="toggle-button" onclick="toggleImageVisible()">Toggle Image Visibility</div>
+
+                    <!-- JavaScript code to toggle the visibility of an image -->
+                    <script>
+                         // Function to toggle the visibility of the image with the ID "trillium"
+                        function toggleImageVisible() {
+                            // Get the image element by its ID
+                            var image = document.getElementById("trillium");
+
+                             // Check if the current display property is "none"
+                            if (image.style.display === "none") {
+                                 // If the image is currently hidden, set its display property to "block" to show it
+                                image.style.display = "block";
+                            } else {
+                                // If the image is currently visible, set its display property to "none" to hide it
+                                image.style.display = "none";
+                            }
+                        }
+                    </script>
+                </ul>
+        </section>
+    </main> 
+</body>
+</html>

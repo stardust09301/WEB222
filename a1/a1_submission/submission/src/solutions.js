@@ -8,9 +8,6 @@
  *
  * Please update the following with your information:
  *
- *      Name: Jenna Moon
- *      Student ID: 134957224
- *      Date: 2023-10-03
  *
  * Please see all unit tests in the files problem-00.test.js, problem-01.test.js, etc.
  */
